@@ -28,7 +28,7 @@ class LeadsController < ApplicationController
 
     respond_to do |format|
       if @lead.save
-        format.html { redirect_to @lead, notice: 'Lead was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Thanks for submitting your interest. We will contact you soon!'}
         format.json { render :show, status: :created, location: @lead }
       else
         format.html { render :new }
