@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :leads
   resources :pages, only: :index
   root 'pages#index'
 

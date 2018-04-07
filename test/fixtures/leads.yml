@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  uber: false
+  lyft: false
+  hrs: 1
+  distance: 1
+
+two:
+  email: MyString
+  uber: false
+  lyft: false
+  hrs: 1
+  distance: 1

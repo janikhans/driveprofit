@@ -1,0 +1,14 @@
+<%= simple_form_for @lead  do |f| %>
+  <%= f.input :email, label: 'Your email' %>
+    <h3>Who do you drive for?</h3>
+  <div class="row">
+    <%= f.input :uber, wrapper_html: { class: 'col-md-6' } %>
+    <%= f.input :lyft, wrapper_html: { class: 'col-md-6' } %>
+  </div>
+  <h3>On average, how many...</h3>
+  <div class="row">
+    <%= f.input :hrs, label: 'Hours do you drive?', wrapper_html: { class: 'col-md-6' } %>
+    <%= f.input :distance, label: 'Miles do you drive?', wrapper_html: { class: 'col-md-6' } %>
+  </div>
+  <%= f.submit :submit, class: 'btn btn-danger btn-block btn-round' %>
+<% end %>
