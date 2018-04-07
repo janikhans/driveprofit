@@ -2,3 +2,11 @@
 @import 'theme';
 
 @import 'font-awesome';
+
+#splash-header {
+ background-image: image-url("splash-image.jpg");  
+}
+
+#lead-header {
+  background-image: image-url("login-image.jpg");
+}
