@@ -10,7 +10,7 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <div class="wrapper">
+    <div class="wrapper <%= 'container mt-10' unless @no_container %>">
       <%= render 'layouts/header' %>
       <%= yield %>
     </div>

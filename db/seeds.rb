@@ -39,3 +39,33 @@ Brand.create(
     { name: 'Farmers', website: 'farmers.com', email: 'farms@example.com', password: 'password', password_confirmation: 'password' }
   ]
 )
+
+Brand.all.each do |brand|
+  rand(1..3).times do
+    brand.campaigns.create(
+      name: Faker::Name.first_name,
+      price: rand(0.10..0.20),
+      description: Faker::Hipster.paragraph
+    )
+  end
+end
+
+User.all.each_with_index do |user, index|
+  number = index == 0 ? 5 : rand(1..6)
+  number.times do
+    user.contracts.create(
+      campaign: Campaign.all.sample
+    )
+  end
+
+  avg_ride_count = rand(5..30)
+  one_month_ago = Date.current - 1.month
+
+  (one_month_ago..Date.current).each do |d|
+    user.daily_reports.create(
+      ride_count: avg_ride_count * rand(0.50..1.50),
+      date: d
+    )
+  end
+
+end

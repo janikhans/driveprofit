@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408022440) do
+ActiveRecord::Schema.define(version: 20180408184717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,34 @@ ActiveRecord::Schema.define(version: 20180408022440) do
     t.index ["reset_password_token"], name: "index_brands_on_reset_password_token", unique: true
   end
 
+  create_table "campaigns", force: :cascade do |t|
+    t.bigint "brand_id"
+    t.decimal "price", precision: 10, scale: 2
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_campaigns_on_brand_id"
+  end
+
+  create_table "contracts", force: :cascade do |t|
+    t.bigint "campaign_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_contracts_on_campaign_id"
+    t.index ["user_id"], name: "index_contracts_on_user_id"
+  end
+
+  create_table "daily_reports", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "ride_count"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_daily_reports_on_user_id"
+  end
+
   create_table "leads", force: :cascade do |t|
     t.string "email"
     t.boolean "uber"
@@ -42,6 +70,14 @@ ActiveRecord::Schema.define(version: 20180408022440) do
     t.integer "distance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "payouts", force: :cascade do |t|
+    t.bigint "daily_report_id"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["daily_report_id"], name: "index_payouts_on_daily_report_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,4 +100,9 @@ ActiveRecord::Schema.define(version: 20180408022440) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "campaigns", "brands"
+  add_foreign_key "contracts", "campaigns"
+  add_foreign_key "contracts", "users"
+  add_foreign_key "daily_reports", "users"
+  add_foreign_key "payouts", "daily_reports"
 end
