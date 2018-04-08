@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  devise_for :brands, path: :brands
+  devise_for :users, path: :users
   get 'request' => 'leads#new'
+
+  resources :users
+
+  resource :dashboard
+  
   resources :leads, only: :create
   resources :pages, only: :index
   root 'pages#index'
-
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
