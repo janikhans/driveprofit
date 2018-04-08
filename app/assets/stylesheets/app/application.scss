@@ -1,0 +1,41 @@
+@import "bootstrap";
+@import 'theme';
+
+@import 'font-awesome';
+
+.w-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.w-32 {
+  width: 32px;
+  height: 32px;
+}
+
+#notice-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  .alert, .notice {
+    padding: 1rem 0;
+    text-align: center;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    border-radius: 0px;
+  }
+  .alert {
+    background: rgba(234, 136, 136, 0.9);
+  }
+  .notice {
+    background: rgba(52, 152, 219, 0.9);
+  }
+}
+
+.font-16 {
+  font-size: 16px;
+}

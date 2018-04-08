@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drive Profit</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'app/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'app/application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="bg-light">
+    <%= render 'layouts/app/navbar' %>
+    <%= render 'layouts/flash' %>
+    <main role="main" class="container mt-3">
+      <%= yield %>
+    </main>
+    <%= render 'layouts/app/footer' %>
+  </body>
+</html>

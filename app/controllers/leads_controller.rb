@@ -1,4 +1,5 @@
 class LeadsController < ApplicationController
+    layout 'frontend'
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
 
   # GET /leads
