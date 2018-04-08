@@ -29,10 +29,10 @@ class LeadsController < ApplicationController
     respond_to do |format|
       if @lead.save
         format.html { redirect_to root_path, notice: 'Thanks for submitting your interest. We will contact you soon!'}
-        format.json { render :show, status: :created, location: @lead }
+        format.js
       else
         format.html { render :new }
-        format.json { render json: @lead.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

@@ -1,0 +1,9 @@
+<% if @lead.errors.any? %>
+  $('#new_lead').html("<%= escape_javascript(render partial: 'leads/form') %>");
+<% else %>
+  $('#new_lead').fadeOut("slow", function(){
+     var div = $("<div id='success' class='text-center'><h1 style='font-weight: 600;'>Submission accepted!</h1><p>We will be contacting you when we are ready!</p></div>").hide();
+     $(this).replaceWith(div);
+     $('#success').fadeIn("slow");
+  });
+<% end %>

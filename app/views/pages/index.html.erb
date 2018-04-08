@@ -1,27 +1,29 @@
-
-<div id="splash-header" class="page-header" data-parallax="true">
-  <div class="filter"></div>
-  <div class="container">
-      <div class="motto text-center">
-          <h1>Driving for Uber or Lyft?</h1>
-          <h3>Maximize your potential!</h3>
-          <br>
-          <%= link_to '#main', class: 'btn btn-outline-neutral btn-round' do %>
-            <i class="fa fa-angle-double-down"></i>Learn More
-          <% end %>
-          <%= link_to 'Request Access', request_path, class: 'btn btn-outline-neutral btn-round' %>
-      </div>
+<%= content_for :header do %>
+  <div id="splash-header" class="page-header" data-parallax="true">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="motto text-center m-auto" style="width: 500px;">
+            <h1 style="font-weight: 600;">Want to Earn More Money For Your Rides?</h1>
+            <h3 style="font-weight: 400;">Here’s The #1 Secret That Uber Drivers Are Using to Triple Their Income…</h3>
+            <br>
+            <%= link_to '#main', class: 'btn btn-outline-neutral btn-round' do %>
+              <i class="fa fa-angle-double-down"></i>Learn More
+            <% end %>
+            <%= link_to 'Request Access', request_path, class: 'btn btn-outline-neutral btn-round' %>
+        </div>
+    </div>
   </div>
-</div>
+<% end %>
+
 <div id="main" class="main">
   <div class="section text-center">
     <div class="container">
       <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="title">Let's talk product</h2>
-              <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+              <h2 class="title">Oh it gets better...</h2>
+              <h5 class="description"><strong>DriveProfit</strong> is partnered with over <strong>250 brands and businesses</strong> that are looking for <strong><u>more exposure.</u></strong></h5>
               <br>
-              <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a>
+              <%= link_to 'Interested Yet?', request_path, class: 'btn btn-danger btn-round' %>
           </div>
       </div>
       <br><br>
