@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :leads
+  get 'request' => 'leads#new'
+  resources :leads, only: :create
   resources :pages, only: :index
   root 'pages#index'
 
