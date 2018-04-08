@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  daily_report: one
+  amount: 9.99
+
+two:
+  daily_report: two
+  amount: 9.99
